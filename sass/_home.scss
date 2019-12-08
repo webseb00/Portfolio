@@ -1,0 +1,134 @@
+// HOME SECTION
+
+.home {
+    height: 100vh;
+    background-image: linear-gradient(180deg, rgba($secondary-color,.8) 0%, rgba($secondary-color,.8) 100%), 
+    url("../img/portfolio-bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &-content {
+        height: 100%;
+        position: relative;
+        color: $white-color-dark;
+    }
+
+    &-text {
+        padding-top: 35vh;
+    }
+
+    &-anchor {
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        transform: translateX(-50%);
+        margin-left: -21px;
+        animation: bounce 2s infinite;
+
+        &-link {
+            font-size: 36px;
+            color: $white-color;
+            display: inline-block;
+            transform: rotate(90deg);
+            text-decoration: none;
+        }
+    }
+        
+    .name-color {
+        font-weight: 700;
+        color: $primary-color;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+// SECTION ABOUT
+
+.section-heading {
+    padding: 4rem 0;
+}
+
+.about {
+    padding: 6rem 0 8rem;
+
+    &-block {
+        box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.2);
+        background-color: rgba(247,247,247,.6);
+        padding: 2rem 1rem;
+        border: 1px solid rgba(0,0,0,.1);
+        height: 100%;
+        
+        @include screen-xl {
+            height: unset;
+        }
+    }
+
+    &-block--middle {
+        margin: 0;
+
+        @include screen-xl {
+            margin: 4rem 0;
+        }
+    }
+
+    &-icon {
+        font-size: 5.2rem;
+        margin: 1.2rem 0;
+        color: $primary-color;
+        display: inline-block;
+    }
+
+    &-text {
+        color: #212221;
+        line-height: 1.4;
+        letter-spacing: .2px;
+    }
+}
+
+// SECTION TECHNOLOGIES
+
+.technologies {
+    padding: 6rem 0;
+    background: #ece8d3;
+}
+
+// SECTION PORTFOLIO
+
+.portfolio {
+    padding: 5rem 0;
+    color: $black-color;
+    background-color: $secondary-color;
+
+    .intro-heading {
+        color: $white-color;
+    }
+} 
+
+// SECTION CONTACT
+
+.contact {
+    padding: 6rem 0;
+}
+
+// FOOTER 
+
+.footer {
+    padding: 3rem 0;
+    color: $white-color-dark;
+    background: $secondary-color;
+
+    &-content {
+        text-align: center;
+    }
+}

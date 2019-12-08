@@ -1,0 +1,84 @@
+.form {
+	border-radius: 10px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 4rem 2rem 1rem 2rem;
+
+    @include screen-bg {
+    	width: 100%;
+    	padding: 4rem 0 1rem 0;
+    }
+
+	&-body {
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	&-group {
+		position: relative;
+		margin-bottom: 3rem;
+	}
+
+	&-label {
+		pointer-events: none;
+		font-size: 14px;
+		color: $basic-black-shadow;
+		position: absolute;
+		bottom: 12px;
+		left: 10px;
+		transition: .4s;
+
+		&.active {
+			bottom: 40px;
+			left: 0;
+		}
+
+		&--textarea {
+			bottom: 75px;
+		}
+
+		&--textarea.active {
+			bottom: 100px;
+		}
+	}
+
+	&-field {
+		background: transparent;
+		border: none;
+		outline: none;
+		border-bottom: 2px solid $basic-black-shadow;
+		padding: 10px;
+		width: 100%;
+		font-size: 16px;
+		color: $dark-black-shadow;
+
+		&--textarea {
+			height: 100px;
+			resize: none;
+		}
+	}
+
+	&-line {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		display: block;
+		transition: 1s;
+
+		&--textarea {
+			bottom: 3px;
+		}
+
+		&.invalid {
+			background: $danger-color;
+			width: 100%;
+		}
+
+		&.valid {
+			background: $success-color;
+			width: 100%;
+		}
+	}
+}

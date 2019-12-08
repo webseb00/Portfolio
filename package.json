@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Template",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/style.scss css/style.css -w",
+    "watch:server": "browser-sync start --server --files css/*.css",
+    "start": "npm-run-all --parallel watch:*",
+
+    "build:compile": "node-sass sass/style.scss css/style.comp.css",
+    "build:prefix": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
+    "build:compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build": "npm-run-all build:*"
+  },
+  "author": "Basiński Sebastian",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "browser-sync": "^2.26.7",
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3"
+  }
+}

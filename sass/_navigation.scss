@@ -1,0 +1,95 @@
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 30rem;
+	z-index: 999;
+	background: $secondary-color;
+	box-shadow: 0 0 10px -2px $basic-black-shadow;
+	transform: translateX(-30rem);
+	transition: .6s ease-in;
+
+	&.active {
+		transform: translateX(0);
+	}
+
+	&-button {
+		position: absolute;
+		top: 5rem;
+		right: -5rem;
+		width: 5rem;
+		height: 5rem;
+		background: $primary-color;
+		color: $secondary-color;
+		box-shadow: 0 0 10px -2px $basic-black-shadow;
+		font-size: 4.2rem;
+		outline: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	&-icon {
+		display: inline-block;
+	    transform: rotate(0deg);
+
+	    &.rotate {
+	    	transform: rotate(180deg);
+	    }
+	}
+
+	&-main {
+		height: 100vh;
+		overflow-y: auto;
+	}
+
+	&-header {
+		margin-top: 6rem;
+	}
+
+	&-avatar {
+		width: 160px;
+		border-radius: 50%;
+		box-shadow: 0 0 0 5px rgba(255,255,255,.6);
+	}
+
+	&-nav {
+		margin: 3rem 0;
+	}
+
+	&-list {
+		list-style-type: none;
+	}
+
+	&-item {
+		margin: 1rem 0;
+	}
+
+	&-link {
+		font-family: 'Bebas Neue', cursive;
+		font-size: 3rem;
+		letter-spacing: 2px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $white-color;
+		position: relative;
+		padding: 0 5px;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			background: $primary-color;
+			height: 100%;
+			width: 100%;
+			transform: scaleY(0);
+			transition: .4s;
+			z-index: -1;
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
