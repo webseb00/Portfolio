@@ -2,8 +2,7 @@
 
 .home {
     height: 100vh;
-    background-image: linear-gradient(180deg, rgba($secondary-color,.8) 0%, rgba($secondary-color,.8) 100%), 
-    url("../img/portfolio-bg.jpeg");
+    background-image: linear-gradient(40deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.6) 100%), url("../img/main-bg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -61,32 +60,48 @@
 
 .about {
     padding: 6rem 0 8rem;
+    background: $blue-light-color;
 
     &-block {
-        box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.2);
-        background-color: rgba(247,247,247,.6);
+        display: flex;
+        align-items: center;
         padding: 2rem 1rem;
-        border: 1px solid rgba(0,0,0,.1);
-        height: 100%;
-        
-        @include screen-xl {
-            height: unset;
+        border-radius: 5px;
+        transition: .4s;
+
+        @include screen-md {
+            display: inline-block;
         }
+    }
+
+    &-block:hover {
+        box-shadow: 0px 15px 30px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    &-block:hover .about-icon {
+        filter: grayscale(0);
+        opacity: 1;
     }
 
     &-block--middle {
-        margin: 0;
+        flex-direction: row-reverse;
 
-        @include screen-xl {
-            margin: 4rem 0;
-        }
+        // @include screen-xl {
+        //     margin: 4rem 0;
+        // }
+    }
+
+    &-content {
+        width: 75%;
+        margin: 0 auto;
     }
 
     &-icon {
-        font-size: 5.2rem;
         margin: 1.2rem 0;
-        color: $primary-color;
-        display: inline-block;
+        width: 16rem;
+        opacity: .6;
+        filter: grayscale(1);
+        transition: .4s;
     }
 
     &-text {
@@ -100,7 +115,6 @@
 
 .technologies {
     padding: 6rem 0;
-    background: #ece8d3;
 }
 
 // SECTION PORTFOLIO
@@ -108,11 +122,7 @@
 .portfolio {
     padding: 5rem 0;
     color: $black-color;
-    background-color: $secondary-color;
-
-    .intro-heading {
-        color: $white-color;
-    }
+    background: $blue-light-color;
 } 
 
 // SECTION CONTACT
@@ -126,7 +136,7 @@
 .footer {
     padding: 3rem 0;
     color: $white-color-dark;
-    background: $secondary-color;
+    background: $gradient-color;
 
     &-content {
         text-align: center;

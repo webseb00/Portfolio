@@ -177,62 +177,50 @@
 // BUTTONS STYLES
 
 .btn {
+	font-family: 'Lato', sans-serif;
     border: none;
     outline: none;
     text-decoration: none;
     background: transparent;
     cursor: pointer;
     color: $white-color;
-    transition: .4s;
+	transition: all .4s;
 
-    &-primary {
-        background: $primary-color;
-        border: 1px solid $primary-color;
-        padding: 1.5rem 6rem;
-        transition: .4s;
+    &-submit {
+		background: #2256af;
+		padding: 1rem 4rem;
+		font-size: 1.6rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		box-shadow: 0 4px 10px rgba(0,0,0,.2);
+		border-radius: 2px;
 
-        &:hover {
-            background: transparent;
-            color: $primary-color;
-        }
+		i {
+			font-size: 2.6rem;
+			vertical-align: middle;
+			padding-right: 5px;
+		}
+
+		&:hover {
+			background: #0e1f3e;
+		}
     }
 
-    &-white {
-        border: 1px solid $white-color;
-        padding: 1.5rem 3rem;
-        transition: .4s;
-        position: relative;
-        z-index: 1;
-    }
-
-    &-small {
-        padding: 1.5rem 3rem;
-    }
-
-    &-medium {
-        padding: 1.5rem 6rem;
-    }
 }
 
 // HORIZONTAL LINE
 
-.horizontal-line {
-    display: block;
-    margin: 1rem auto;
-    background: $primary-color;
-    border-radius: 0.5rem;
+.divider {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 
-    &__small {
-        width: 4.5rem;
-        height: 0.3rem;
-    }
-
-    &__big {
-        width: 18rem;
-        height: 0.5rem;
-    }
-
-    &.secondary-color {
-        background: $secondary-color;
-    }
+	&__line {
+		width: 45px;
+		height: 3px;
+		background: #2256af;
+		display: inline-block;
+		margin: 0 10px;
+	}
 }

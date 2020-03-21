@@ -7,7 +7,6 @@
     "watch:sass": "node-sass sass/style.scss css/style.css -w",
     "watch:server": "browser-sync start --server --files css/*.css",
     "start": "npm-run-all --parallel watch:*",
-
     "build:compile": "node-sass sass/style.scss css/style.comp.css",
     "build:prefix": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
     "build:compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",

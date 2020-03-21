@@ -3,8 +3,7 @@ const name = document.getElementById('name'),
 	  message = document.getElementById('message'),
 	  form = document.getElementById('contact-form'),
 	  infoText = document.getElementById('infoText-name'),
-	  formGroup = document.querySelector('.form-group'),
-	  formLines = document.querySelectorAll('.form-line');
+	  formGroup = document.querySelector('.form-group');
 
 const inputsArray = [name, email, message];
 
@@ -22,58 +21,61 @@ inputsArray.forEach(input => input.addEventListener('blur', () => {
 	
 }));
 
+name.addEventListener('blur', nameVerify);
+email.addEventListener('blur', emailVerify);
+message.addEventListener('blur', messageVerify);
 
-// name field
-name.addEventListener('change', checkName);
-// // email field
-email.addEventListener('change', checkEmail);
-// // message field
-message.addEventListener('change', checkMessage);
-
-function checkName() {
-	if(name.value !== '') {
-		name.parentNode.childNodes[5].classList.add('valid');
+function nameVerify() {
+	if(name.value !== '' && name.value.length >= 3) {
+		name.classList.add('valid');
+		name.classList.remove('invalid');
 		return true;
+	} else {
+		name.classList.add('invalid');
+		name.classList.remove('valid');
 	}
 }
 
-function checkEmail() {
-	if(email.value !== '') {
-		email.parentNode.childNodes[5].classList.add('valid');
+function emailVerify() {
+	if(email.value.includes('@') && email.value.includes('.')) {
+		email.classList.add('valid');
+		email.classList.remove('invalid');
 		return true;
+	} else {
+		email.classList.add('invalid');
+		email.classList.remove('valid');
 	}
 }
 
-function checkMessage() {
+function messageVerify() {
 	if(message.value !== '') {
-		message.parentNode.childNodes[5].classList.add('valid');
-		return true;
+		message.classList.add('valid');
+		message.classList.remove('invalid');
+		return false;
+	} else {
+		message.classList.add('invalid');
+		message.classList.remove('valid');
 	}
 }
 
-// check form fields validity
 function validate() {
-		
-	if(name.value === '') {
-		name.parentNode.childNodes[5].classList.add('invalid');
+	if(name.value === '' && name.value.length < 3) { 
+		name.classList.add('invalid');
 		return false;
-	} 
+	}
 
-	const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	
-	if(email.value === '') {
-		email.parentNode.childNodes[5].classList.add('invalid');
+	if(!email.value.includes('@') && !email.value.includes('.')) {
+		email.classList.add('invalid');
 		return false;
-	} 
+	}
 
 	if(message.value === '') {
-		message.parentNode.childNodes[5].classList.add('invalid');
-		return false
-	} 
+		message.classList.add('invalid');
+		return false;
+	}
 
 	sendForm();
-}
-
+};
 
 function sendForm() {
 
@@ -104,17 +106,16 @@ function sendForm() {
         });
 
       return false;
-}
+};
 
 function clearFields() {
 	inputsArray.forEach(input => {
 		input.value = '';
 		input.nextElementSibling.classList.remove('active');
+		input.classList.remove('valid');
+		input.classList.remove('invalid');
 	});
-	
-	formLines.forEach(item => item.classList.remove('valid'));
-
-}
+};
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();

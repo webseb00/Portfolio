@@ -1,17 +1,16 @@
 .form {
-	border-radius: 10px;
-    width: 70%;
-    margin: 0 auto;
-    padding: 4rem 2rem 1rem 2rem;
-
-    @include screen-bg {
-    	width: 100%;
-    	padding: 4rem 0 1rem 0;
-    }
 
 	&-body {
-		width: 85%;
-		margin: 0 auto;
+		width: 80%;
+
+		@include screen-xl {
+			width: 60%;
+			margin: 0 auto;
+		}
+
+		@include screen-md {
+			width: 100%;
+		}
 	}
 
 	&-group {
@@ -29,8 +28,7 @@
 		transition: .4s;
 
 		&.active {
-			bottom: 40px;
-			left: 0;
+			bottom: 45px;
 		}
 
 		&--textarea {
@@ -38,15 +36,17 @@
 		}
 
 		&--textarea.active {
-			bottom: 100px;
+			bottom: 110px;
 		}
 	}
 
 	&-field {
-		background: transparent;
+		font-family: 'Lato', sans-serif;
+		background: $blue-light-color;
 		border: none;
 		outline: none;
-		border-bottom: 2px solid $basic-black-shadow;
+		border: 1px solid rgba(0,0,0,.1);
+		border-radius: 5px;
 		padding: 10px;
 		width: 100%;
 		font-size: 16px;
@@ -56,29 +56,22 @@
 			height: 100px;
 			resize: none;
 		}
-	}
-
-	&-line {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 0;
-		height: 2px;
-		display: block;
-		transition: 1s;
-
-		&--textarea {
-			bottom: 3px;
-		}
 
 		&.invalid {
-			background: $danger-color;
-			width: 100%;
+			background: rgba(192, 57, 43, .5);
 		}
 
 		&.valid {
-			background: $success-color;
-			width: 100%;
+			background: rgba(39, 174, 96, .5);
+		}
+	}
+
+	&-icon {
+		width: 24rem;
+
+		@include screen-xl {
+			width: 16rem;
+			margin-bottom: 4rem;
 		}
 	}
 }
