@@ -3,9 +3,11 @@
 .home {
     height: 100vh;
     background-image: linear-gradient(40deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.6) 100%), url("../img/main-bg.jpeg");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    position: relative;
 
     &-content {
         height: 100%;

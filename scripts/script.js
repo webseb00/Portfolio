@@ -24,3 +24,14 @@ window.addEventListener('load', () => {
 	preloader.classList.remove('active');
 });
 
+
+// particles.js library
+
+
+// window.addEventListener('load', () => {
+// 	Particles.init({
+// 		selector: '.background',
+// 		color: '#ffffff',
+// 		connectParticles: true
+// 	});
+// });
