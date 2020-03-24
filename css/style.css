@@ -573,9 +573,13 @@ body {
 .footer {
   padding: 3rem 0;
   color: #ecf0f1;
-  background: linear-gradient(40deg, #2256af 0%, #0e1f3e 100%); }
+  background: #C1C6CC; }
   .footer-content {
     text-align: center; }
+  .footer-text {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #ffffff; }
 
 .navbar {
   position: fixed;
@@ -646,6 +650,11 @@ body {
       transform: scaleX(1); }
     .navbar-link:hover {
       color: white; }
+  .navbar-contact {
+    margin: 4rem 0;
+    color: rgba(255, 255, 255, 0.8); }
+  .navbar-phone {
+    margin-bottom: .5rem; }
 
 .form-body {
   width: 80%; }

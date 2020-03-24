@@ -137,10 +137,16 @@
 
 .footer {
     padding: 3rem 0;
-    color: $white-color-dark;
-    background: $gradient-color;
+    color: #ecf0f1;
+    background: #C1C6CC;
 
     &-content {
         text-align: center;
+    }
+
+    &-text {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        color: $white-color;
     }
 }
