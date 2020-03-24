@@ -355,7 +355,7 @@
   z-index: 1000;
   width: 100vw;
   height: 100vh;
-  background: #1f3044;
+  background: #CCCCCC;
   position: fixed;
   display: none; }
   .load-block {
@@ -368,7 +368,7 @@
     width: 100px;
     height: 100px;
     border: 5px solid #ffffff;
-    border-top: 5px solid #fb9039;
+    border-top: 5px solid #2256AF;
     animation: spinner 1s ease-in-out infinite; }
   .load.active {
     display: block; }
