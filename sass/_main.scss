@@ -25,7 +25,6 @@ body {
 
 .heading {
     
-
     &-1,
     &-2 {
         font-family: 'Montserrat', sans-serif;
@@ -38,11 +37,6 @@ body {
 
     &-1 {
         font-size: 7.4rem;
-
-        &-sub {
-            // color: $primary-color;
-            color: #2256af;
-        }
 
         @include screen-sm {
             font-size: 5.8rem;
@@ -61,6 +55,10 @@ body {
         font-weight: 600;
         margin-bottom: 2rem;
         color: $black-color;
+    }
+
+    &-sub {
+        color: #2256af;
     }
 }
 

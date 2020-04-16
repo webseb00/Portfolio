@@ -40,6 +40,27 @@
         font-weight: 700;
         color: $primary-color;
     }
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;  
+        bottom: 0;
+        width: 50%;
+        height: 30px;  
+        background-color: $blue-light-color;
+    }
+
+    &::after {
+        left: 0;
+        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    }
+
+    &::before {
+        right: 0;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+
 }
 
 @keyframes bounce {
@@ -61,7 +82,7 @@
 }
 
 .about {
-    padding: 6rem 0 8rem;
+    padding: 8rem 0;
     background: $blue-light-color;
 
     &-block {
