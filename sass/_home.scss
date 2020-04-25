@@ -150,12 +150,50 @@
     padding: 6rem 0;
 }
 
+// FILES SECTION
+
+.files {
+    background: $primary-color;
+    padding: 6rem 0;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__link {
+        font-weight: bold;
+        margin: 0 1.5rem;
+        background: $white-color;
+        border-radius: 5px;
+        color: $primary-color;
+        transition: .4s;
+        width: 18rem;
+        padding: 5px;
+        border: 2px solid $white-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            color: $white-color;
+            background: $primary-color;
+        }
+
+        .fas {
+            font-size: 2.4rem;
+            padding-right: 1rem;
+        }
+    }
+
+}
+
 // FOOTER 
 
 .footer {
     padding: 3rem 0;
-    color: $white-color-dark;
-    background: #C1C6CC;
+    background: $white-color;
 
     &-content {
         text-align: center;
@@ -163,7 +201,7 @@
 
     &-text {
         font-family: 'Montserrat';
-        font-weight: 600;
-        color: $white-color;
+        font-weight: 400;
+        color: $primary-color;
     }
 }

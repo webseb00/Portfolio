@@ -188,23 +188,22 @@
 // BUTTONS STYLES
 
 .btn {
-		font-family: 'Lato', sans-serif;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    background: transparent;
-    cursor: pointer;
-    color: $white-color;
-		transition: all .4s;
+	font-family: 'Lato', sans-serif;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	background: transparent;
+	cursor: pointer;
+	color: $white-color;
+	transition: all .4s;
 
-    &-submit {
+	&-submit {
 		background: $primary-color;
 		padding: 1rem 4rem;
 		font-size: 1.6rem;
 		font-weight: 600;
-		text-transform: uppercase;
-		box-shadow: 0 4px 10px rgba($black-color,.2);
-		border-radius: 2px;
+		border: 2px solid $primary-color;
+		border-radius: 5px;
 
 		i {
 			font-size: 2.6rem;
@@ -213,18 +212,19 @@
 		}
 
 		&:hover {
-			background: #0e1f3e;
+			background: $white-color;
+			color: $primary-color;
 		}
-  }
+	}
 }
 
 // HORIZONTAL LINE
 
 .divider {
-		display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
 
 	&__line {
 		width: 45px;

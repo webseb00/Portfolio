@@ -1,92 +1,91 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-size: 1.6rem; 
-    font-family: 'Lato', sans-serif;
-    color: $grey-dark-color;
-    background: $white-color;
+  font-size: 1.6rem; 
+  font-family: 'Lato', sans-serif;
+  color: $grey-dark-color;
+  background: $white-color;
 }
 
 .wrapper {
-    text-align: center;
+  text-align: center;
 }
 
 // Typography base styles
 
 .heading {
-    
-    &-1,
-    &-2 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        text-transform: uppercase;
-        text-shadow: 0 5px 5px rgba($black-color,.2);
-        color: $white-color;
-        letter-spacing: 1px;
-    }
+  &-1,
+  &-2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-shadow: 0 5px 5px rgba($black-color,.2);
+    color: $white-color;
+    letter-spacing: 1px;
+  }
 
-    &-1 {
-        font-size: 7.4rem;
+  &-1 {
+    font-size: 7.4rem;
 
-        @include screen-sm {
-            font-size: 5.8rem;
-        }
+    @include screen-sm {
+      font-size: 5.8rem;
     }
+  }
 
-    &-2 {
-        font-size: 2.2rem;
-        margin-top: 10px;
-        display: inline-block;
-    }
+  &-2 {
+    font-size: 2.6rem;
+    margin-top: 10px;
+    display: inline-block;
+  }
 
-    &-3 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 2rem;
-        color: $black-color;
-    }
+  &-3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: $black-color;
+  }
 
-    &-sub {
-        color: $primary-color;
-    }
+  &-sub {
+    color: $primary-color;
+  }
 }
 
 .intro {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
     
-    &-heading {
-        font-family: 'Bebas Neue', cursive;
-        font-size: 4rem;
-        font-weight: normal;
-        color: rgba($black-color,.9);
-        position: relative;
-    }
+  &-heading {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    font-weight: normal;
+    color: rgba($black-color,.9);
+    position: relative;
+  }
 
-    &-number {
-        font-size: 8rem;
-        color: rgba($black-color,.2);
-        position: absolute;
-        left: 50%;
-        top: -50px;
-        transform: translateX(-50%);
-    }
+  &-number {
+    font-size: 8rem;
+    color: rgba($black-color,.2);
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+  }
 
-    &-text {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.6rem;
-        font-style: italic;
-        line-height: 2.4rem;
-        color: #646c79;
-    }
+  &-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    line-height: 2.4rem;
+    color: #646c79;
+  }
 }
