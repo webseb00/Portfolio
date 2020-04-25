@@ -30,7 +30,7 @@ body {
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         text-transform: uppercase;
-        text-shadow: 0 5px 5px rgba(0,0,0,.2);
+        text-shadow: 0 5px 5px rgba($black-color,.2);
         color: $white-color;
         letter-spacing: 1px;
     }
@@ -58,7 +58,7 @@ body {
     }
 
     &-sub {
-        color: #2256af;
+        color: $primary-color;
     }
 }
 
@@ -69,13 +69,13 @@ body {
         font-family: 'Bebas Neue', cursive;
         font-size: 4rem;
         font-weight: normal;
-        color: rgba(0,0,0,.9);
+        color: rgba($black-color,.9);
         position: relative;
     }
 
     &-number {
         font-size: 8rem;
-        color: rgba(0,0,0,.2);
+        color: rgba($black-color,.2);
         position: absolute;
         left: 50%;
         top: -50px;

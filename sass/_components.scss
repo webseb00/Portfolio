@@ -166,7 +166,7 @@
 		width: 100px;
 		height: 100px;
 		border: 5px solid $white-color;
-		border-top: 5px solid #2256AF;
+		border-top: 5px solid $primary-color;
 		animation: spinner 1s ease-in-out infinite;
 	}
 
@@ -188,22 +188,22 @@
 // BUTTONS STYLES
 
 .btn {
-	font-family: 'Lato', sans-serif;
+		font-family: 'Lato', sans-serif;
     border: none;
     outline: none;
     text-decoration: none;
     background: transparent;
     cursor: pointer;
     color: $white-color;
-	transition: all .4s;
+		transition: all .4s;
 
     &-submit {
-		background: #2256af;
+		background: $primary-color;
 		padding: 1rem 4rem;
 		font-size: 1.6rem;
 		font-weight: 600;
 		text-transform: uppercase;
-		box-shadow: 0 4px 10px rgba(0,0,0,.2);
+		box-shadow: 0 4px 10px rgba($black-color,.2);
 		border-radius: 2px;
 
 		i {
@@ -215,14 +215,13 @@
 		&:hover {
 			background: #0e1f3e;
 		}
-    }
-
+  }
 }
 
 // HORIZONTAL LINE
 
 .divider {
-	display: flex;
+		display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
@@ -230,7 +229,7 @@
 	&__line {
 		width: 45px;
 		height: 3px;
-		background: #2256af;
+		background: $primary-color;
 		display: inline-block;
 		margin: 0 10px;
 	}
