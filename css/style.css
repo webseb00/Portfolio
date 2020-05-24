@@ -751,7 +751,9 @@ body {
       width: 16rem;
       margin-bottom: 4rem; } }
 
-.background {
+.particles-js-canvas-el {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  left: 0;
-  top: 0; }
+  top: 0;
+  left: 0; }
