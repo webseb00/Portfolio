@@ -18,10 +18,8 @@ navButton.addEventListener('click', () => {
 
 const preloader = document.querySelector('#loader');
 
-preloader.classList.add('active');
-
-window.addEventListener('DOMContentLoaded', () => {
-	preloader.classList.remove('active');
+window.addEventListener('load', () => {
+	preloader.classList.add('hide');
 });
 
 

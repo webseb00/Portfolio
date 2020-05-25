@@ -152,7 +152,7 @@
 	height: 100vh;
 	background: #CCCCCC;
 	position: fixed;
-	display: none;
+	display: block;
 
 	&-block {
 		position: absolute;
@@ -170,8 +170,8 @@
 		animation: spinner 1s ease-in-out infinite;
 	}
 
-	&.active {
-		display: block;
+	&.hide {
+		display: none;
 	}
 }
 

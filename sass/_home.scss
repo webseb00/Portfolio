@@ -1,7 +1,7 @@
 // HOME SECTION
 
 .home {
-    height: 100vh;
+    height: 92vh;
     background-image: linear-gradient(40deg, rgba($black-color,.6) 0%, rgba($black-color,.6) 100%), url("../img/main-bg.jpeg");
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -10,21 +10,33 @@
     position: relative;
 
     &-content {
-        height: 100%;
         position: relative;
         color: $white-color-dark;
+        padding-top: 18vh;
+    }
+
+    &-avatar {
+        width: 14rem;
+        height: 14rem;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        img {
+            filter: grayscale(.1);
+        }
     }
 
     &-text {
-        padding-top: 35vh;
+        margin: 2rem 0;
     }
 
     &-anchor {
         position: absolute;
         left: 50%;
-        bottom: 5%;
+        bottom: 3%;
         transform: translateX(-50%);
-        margin-left: -21px;
+        margin-left: -16px;
         animation: bounce 2s infinite;
 
         &-link {
@@ -47,7 +59,7 @@
         position: absolute;  
         bottom: 0;
         width: 50%;
-        height: 30px;  
+        height: 40px;  
         background-color: $blue-light-color;
     }
 
@@ -113,6 +125,10 @@
     &-content {
         width: 75%;
         margin: 0 auto;
+
+        @include screen-sm {
+            width: 85%;
+        }
     }
 
     &-icon {
@@ -156,10 +172,18 @@
     background: $primary-color;
     padding: 6rem 0;
 
+    @include screen-sm {
+        padding: 2rem 0;
+    }
+
     &__wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include screen-sm {
+            flex-direction: column;
+        }
     }
 
     &__link {
@@ -184,6 +208,10 @@
         .fas {
             font-size: 2.4rem;
             padding-right: 1rem;
+        }
+
+        @include screen-sm {
+            margin: 1rem 0;
         }
     }
 

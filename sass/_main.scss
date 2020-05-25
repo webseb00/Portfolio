@@ -32,6 +32,7 @@ body {
     text-shadow: 0 5px 5px rgba($black-color,.2);
     color: $white-color;
     letter-spacing: 1px;
+    line-height: 6rem;
   }
 
   &-1 {
@@ -44,7 +45,6 @@ body {
 
   &-2 {
     font-size: 2.6rem;
-    margin-top: 10px;
     display: inline-block;
   }
 
