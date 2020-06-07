@@ -18,6 +18,31 @@
 		margin-bottom: 3rem;
 	}
 
+	&-icon {
+		position: absolute;
+		font-size: 30px;
+    right: 10px;
+    top: 5px;
+		
+		&.icofont-check {
+			color: $success-info;
+			visibility: hidden;
+		}
+
+		&.icofont-check.valid {
+			visibility: visible;
+		}
+
+		&.icofont-error {
+			color: $warning-info;
+			visibility: hidden;
+		}
+
+		&.icofont-error.invalid {
+			visibility: visible;
+		}
+	}
+
 	&-label {
 		pointer-events: none;
 		font-size: 14px;
@@ -58,15 +83,15 @@
 		}
 
 		&.invalid {
-			background: $warning-info;
+			border: 2px solid $warning-info;
 		}
 
 		&.valid {
-			background: $success-info;
+			border: 2px solid $success-info;
 		}
 	}
 
-	&-icon {
+	&-envelope {
 		width: 24rem;
 
 		@include screen-xl {

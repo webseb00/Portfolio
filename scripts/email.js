@@ -3,7 +3,8 @@ const name = document.getElementById('name'),
 	  message = document.getElementById('message'),
 	  form = document.getElementById('contact-form'),
 	  infoText = document.getElementById('infoText-name'),
-	  formGroup = document.querySelector('.form-group');
+		formGroup = document.querySelector('.form-group'),
+		fieldIcon = document.querySelector('.form-icon');
 
 const inputsArray = [name, email, message];
 
@@ -12,70 +13,56 @@ inputsArray.forEach(input => input.addEventListener('focus', () => {
 }));
 
 inputsArray.forEach(input => input.addEventListener('blur', () => {
-
-	if(input.value !== '') {
-		return true;
-	} else {
-		input.nextElementSibling.classList.remove('active');
-	}
-	
+	if(input.value !== '') return true;
+	else { input.nextElementSibling.classList.remove('active'); }
 }));
 
-name.addEventListener('blur', nameVerify);
-email.addEventListener('blur', emailVerify);
-message.addEventListener('blur', messageVerify);
+// check if inputs are correctly filled
+function validateInputs() {
+	const nameValue = name.value.trim(),
+				emailValue = email.value.trim(),
+				messageValue = message.value.trim();
 
-function nameVerify() {
-	if(name.value !== '' && name.value.length >= 3) {
-		name.classList.add('valid');
-		name.classList.remove('invalid');
-		return true;
-	} else {
-		name.classList.add('invalid');
-		name.classList.remove('valid');
-	}
+	// Check name input:
+	if(nameValue === '') { invalidInput(name); }	
+	else { validInput(name);}
+
+	// Check email input
+	const regexp = /^[\w.-]+@[\w.-]+\.[a-z]{2,3}$/ig;
+
+	if(!regexp.test(emailValue)) { invalidInput(email); }	
+	else { validInput(email); }
+
+	// Check message input
+	if(messageValue === '') { invalidInput(message); }	
+	else { validInput(message);}
+
+	// If there is no errors in array, we can send the form...
+	const validFields = inputsArray.map(input => input.classList.contains('valid') ? true : false);
+	const validFieldsLength = validFields.filter(el => el === true).length;
+
+	if(validFieldsLength === 3) { sendForm(); }
 }
 
-function emailVerify() {
-	if(email.value.includes('@') && email.value.includes('.')) {
-		email.classList.add('valid');
-		email.classList.remove('invalid');
-		return true;
-	} else {
-		email.classList.add('invalid');
-		email.classList.remove('valid');
-	}
+function validInput(field) {
+	field.className = field === message ? 'form-field form-field--textarea valid' : 'form-field valid';
+	field.previousElementSibling.className = 'form-icon icofont-check valid';
 }
 
-function messageVerify() {
-	if(message.value !== '') {
-		message.classList.add('valid');
-		message.classList.remove('invalid');
-		return false;
-	} else {
-		message.classList.add('invalid');
-		message.classList.remove('valid');
-	}
+function invalidInput(field) {
+	field.className = field === message ? 'form-field form-field--textarea invalid' : 'form-field invalid';
+	field.previousElementSibling.className = 'form-icon icofont-error invalid';
 }
 
-function validate() {
-	if(name.value === '' && name.value.length < 3) { 
-		name.classList.add('invalid');
-		return false;
-	}
-
-	if(!email.value.includes('@') && !email.value.includes('.')) {
-		email.classList.add('invalid');
-		return false;
-	}
-
-	if(message.value === '') {
-		message.classList.add('invalid');
-		return false;
-	}
-
-	sendForm();
-};
+function resetForm() {
+	inputsArray.forEach(input => {
+		input.value = '';
+		input.classList.remove('valid');
+		input.classList.remove('invalid');
+		input.nextElementSibling.classList.remove('active');
+		input.previousElementSibling.className = 'form-icon';
+	});
+}
 
 function sendForm() {
 
@@ -99,7 +86,7 @@ function sendForm() {
            alert("Wiadomość wysłana pomyślnie!");
            myform.find("button").text("Wyślij");
            	// clear fields after sending form
-			clearFields();
+						resetForm();
          }, function(err) {
            alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
            myform.find("button").text("Send");
@@ -108,17 +95,9 @@ function sendForm() {
       return false;
 };
 
-function clearFields() {
-	inputsArray.forEach(input => {
-		input.value = '';
-		input.nextElementSibling.classList.remove('active');
-		input.classList.remove('valid');
-		input.classList.remove('invalid');
-	});
-};
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	// validate fields
-	validate();
+	validateInputs();
 });

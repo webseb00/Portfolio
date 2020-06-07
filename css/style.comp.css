@@ -730,6 +730,22 @@ body {
   position: relative;
   margin-bottom: 3rem; }
 
+.form-icon {
+  position: absolute;
+  font-size: 30px;
+  right: 10px;
+  top: 5px; }
+  .form-icon.icofont-check {
+    color: #2ecc71;
+    visibility: hidden; }
+  .form-icon.icofont-check.valid {
+    visibility: visible; }
+  .form-icon.icofont-error {
+    color: #e74c3c;
+    visibility: hidden; }
+  .form-icon.icofont-error.invalid {
+    visibility: visible; }
+
 .form-label {
   pointer-events: none;
   font-size: 14px;
@@ -760,13 +776,13 @@ body {
     height: 100px;
     resize: none; }
   .form-field.invalid {
-    background: rgba(192, 57, 43, 0.5); }
+    border: 2px solid #e74c3c; }
   .form-field.valid {
-    background: rgba(39, 174, 96, 0.5); }
+    border: 2px solid #2ecc71; }
 
-.form-icon {
+.form-envelope {
   width: 24rem; }
   @media (max-width: 1200px) {
-    .form-icon {
+    .form-envelope {
       width: 16rem;
       margin-bottom: 4rem; } }
