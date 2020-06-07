@@ -298,6 +298,9 @@
     justify-content: space-around; }
   .project-info {
     color: #ffffff; }
+    @media (max-width: 400px) {
+      .project-info {
+        display: none; } }
   .project-heading {
     font-size: 2rem;
     font-weight: 600;
@@ -320,6 +323,9 @@
     text-transform: uppercase;
     overflow: hidden;
     z-index: 1; }
+    @media (max-width: 400px) {
+      .project-link {
+        width: 18rem; } }
     .project-link:hover {
       color: #2256AF; }
     .project-link::before {

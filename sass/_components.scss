@@ -68,6 +68,10 @@
 
 	&-info {
 		color: $white-color;
+
+		@include screen-xsm {
+			display: none;
+		}
 	}
 
 	&-heading {
@@ -94,6 +98,10 @@
 		text-transform: uppercase;
 		overflow: hidden;
 		z-index: 1;
+
+		@include screen-xsm {
+			width: 18rem;
+		}
 
 		&:hover {
 			color: $primary-color;

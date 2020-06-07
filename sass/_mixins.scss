@@ -1,3 +1,7 @@
+@mixin screen-xsm {
+	@media (max-width: #{$screen-xsm}) { @content; }
+}
+
 @mixin screen-sm {
 	@media (max-width: #{$screen-sm}) { @content; }
 }
